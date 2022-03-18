@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom'
+//import { Button } from 'antd-mobile';
+//import 'antd-mobile/dist/antd-mobile.css';  // or 'antd-mobile/dist/antd-mobile.less'
 
+//ReactDOM.render(<Button>Start</Button>, document.getElementById('root'));
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
+  </BrowserRouter>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

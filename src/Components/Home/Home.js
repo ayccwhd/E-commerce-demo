@@ -143,7 +143,6 @@ export default class Home extends Component {
                         ))}
                     </Carousel>
                 </div>
-
                 {/* 分类 */}
                 <div className="catitems">
                     {/* <div onClick={() => this.props.history.push('/searchgoods/query=秒杀')}><img src={`${baseUrl}/pyg/icon_index_nav_4@2x.png`} alt="" /></div> */}

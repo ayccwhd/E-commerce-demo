@@ -66,7 +66,7 @@ class ProductList extends Component {
             ]
         }
     }
-    // 双列瀑布流
+    // 双列瀑布流(存在问题，准备用插件)
     getData(data) {
         let heightData = [0, 0];//接收累计高度的容器数组
         let rightData = []//渲染右侧盒子的数组

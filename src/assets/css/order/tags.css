@@ -1,0 +1,36 @@
+.my_nav {
+    position: relative;
+    z-index: 8;
+    height: 44px;
+    top:44px;
+    background-color: #fff;
+}
+.my_nav .my_nav_list_item {
+    width:25%;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+    text-align: center;
+    display: inline-block;
+}
+
+.my_nav .nav_item_link {
+    position: relative;
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #666;
+}
+.my_nav .cur .nav_item_link .before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #f2270c;
+}
+.my_nav .cur .nav_item_link {
+    color: #f2270c;
+}

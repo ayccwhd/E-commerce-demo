@@ -14,9 +14,9 @@ module.exports = {
             [
               "import",
               {
-                  "libraryName": "antd-mobile",
+                  "libraryName": "antd-mobile-v2",
                   "libraryDirectory": "lib"
-              }, "antd-mobile"
+              }, "antd-mobile-v2"
             ]
         ]
     },

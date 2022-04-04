@@ -25,26 +25,30 @@ export default class ButtonPage extends Component {
         icon: PropTypes.string,
     };
     // debounce已达到预期效果！
-    debounce (f,time) {
-        if(f==="") return
+    debounce (fun,time) {
+        if(fun==="") return
         let timer = null
         return () => {
             if(timer) {
                 clearTimeout(timer)
             }
-            timer = setTimeout(f.bind(this),time)
+            timer = setTimeout(fun.apply(this),time)
         }
     }
     // throttle已达到预期效果！
-    throttle (f,time ) {
+    throttle (fun,time ) {
         let timer = null
         return () => {
             if(timer) return
             timer = setTimeout(() => {
-                f.apply(this)
+                fun.apply(this)
                 timer = null
             },time)
         }
+    }
+    click=()=>{
+        console.log(this.props.onClick)
+        this.debounce(this.props.onClick?this.props.onClick:"",1000)
     }
 
     render() {
@@ -56,6 +60,7 @@ export default class ButtonPage extends Component {
                 size={size}
                 shape="round"
                 onClick={this.debounce(this.props.onClick?this.props.onClick:"",1000)}
+                // onClick={this.click.bind(this)}
             >{children}</Button>
         </div>
         )

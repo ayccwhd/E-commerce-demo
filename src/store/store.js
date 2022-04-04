@@ -8,5 +8,7 @@ import RootReducer from './reducers/reducer'
 import logger from 'redux-logger'
 //引入redux-thunk，用于支持异步action
 import thunk from 'redux-thunk'
-let store = createStore(RootReducer, applyMiddleware(thunk,logger))
-export default store
+//引入redux-devtools-extension
+import {composeWithDevTools} from 'redux-devtools-extension'
+
+export default createStore(RootReducer,composeWithDevTools(applyMiddleware(thunk,logger)))

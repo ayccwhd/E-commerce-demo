@@ -1,0 +1,39 @@
+.sub-header{
+    width:100%;
+    height:44px;
+    background-color:#FFFFFF;
+    display: flex;
+    display:-webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    border-bottom: 1px solid #EFEFEF;
+    position: fixed;
+    z-index: 10;
+    left:0;
+    top:0;
+}
+.sub-header .back{
+    width: 44px;
+    height: 44px;
+    background: url(../../images/order/back.png) no-repeat 50%;
+    background-size: 20px 20px;
+}
+.sub-header .title{
+    
+    line-height: 44px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sub-header .menu{
+    width: 44px;
+    height: 44px;
+    background-size: 20px;
+}

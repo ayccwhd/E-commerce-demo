@@ -1,0 +1,406 @@
+@import '~antd/dist/antd.css';
+/* 全局使用 */
+.ml_20 {
+  margin-left: 20px;
+}
+
+.mt_20 {
+  margin-top: 20px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+.width_1200 {
+  width: 1200px;
+}
+
+.block {
+  display: block;
+}
+.left {
+  flex: 4;
+}
+.right {
+  flex: 1;
+  text-align: right;
+}
+
+.center{
+  /*flex 布局*/
+  display: flex;
+  /*实现垂直居中*/
+  align-items: center;
+  /* margin-top: 70px; */
+  text-align: justify;
+}
+
+.border {
+  border: 1px solid red;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgb(81, 90, 110);
+  background-color: rgb(255, 255, 255);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 订单中收货人信息、商品信息等属性 */
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  height: 40px;
+}
+
+.card-head span {
+  font-size: 18px;
+}
+
+/* .content {
+  /* margin: 20px auto; s
+  padding: 15px 25px;
+} */
+
+.content {
+  margin: 20px auto;
+  background-color: #fff;
+  min-height: 200px;
+  padding: 15px 25px;
+}
+
+.card-head span:nth-child(2) {
+  font-size: 12px;
+  color: #438cde;
+  cursor: pointer;
+}
+
+.address-manage {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address-manage > div {
+  border: 1px dotted #949494;
+  width: 265px;
+  height: 120px;
+  margin: 20px 20px 0 0;
+  padding: 10px;
+  cursor: pointer;
+  color: #999;
+}
+
+.ivu-icon {
+  display: inline-block;
+  font-family: Ionicons;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: -0.125em;
+  text-align: center;
+}
+
+.address-item {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.address-item {
+  text-align: center;
+}
+
+.add-address>div{
+  margin: 30px auto;
+  /* margin: auto; */
+  display:inline-block;
+  /* width: 20px;
+  height: 20px; */
+}
+
+.add-address {
+  text-align: center;
+}
+
+.address-manage .address-item .modifyMessage {
+  /* margin: auto; */
+  display:inline-block;
+}
+
+
+
+/* 商品信息 */
+.goods-msg {
+  overflow: hidden;
+}
+
+.shop-name>span:first-child {
+  font-weight: 700;
+}
+
+.goods-list .goods-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 0 20px;
+  border-bottom: 1px dotted #999;
+}
+
+.goods-list .goods-item img {
+  width: 48px;
+  height: 48px;
+}
+/* hover-color
+goods-price */
+.goods-list .goods-item>span:first-child {
+  font-size: 12px;
+  flex: 1;
+  text-align: left;
+  width: 710px;
+}
+
+.goods-list .goods-item>span {
+  text-align: center;
+  display: inline-block;
+  width: 100px;
+}
+
+/* 价格字体要大一些 */
+.goods-list .goods-item .goods-price {
+  font-size: 16px;
+  
+}
+
+.goods-list {
+  width: 1150px;
+  background-color: #f8f8f8;
+  margin: 10px 0 20px 0;
+}
+
+
+
+/* Price组件 */
+.order-price {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #999;
+}
+
+
+/* Commir组件 */
+.order-footer {
+  z-index: 20;
+  height: 50px;
+  background-color: #fff;
+  transition: .35s;
+  color: #8c8c8c;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  border-top: 1px solid #ddd;
+  margin: 10px auto;
+  /* 跟随用户鼠标，一直保持在页面最下方 */
+  position: sticky;
+  bottom: 0;
+}
+
+.order-footer .pay {
+  background-color: #e4393c;
+  width: 150px;
+  font-size: 20px;
+  color: #fff;
+  height: 100%;
+  line-height: 50px;
+  cursor: pointer;
+}
+
+.order-footer a {
+  text-align: center;
+}
+
+.pay-address {
+  font-size: 12px;
+}
+
+
+
+
+/* Payment页面 */
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+/* PaymentMode组件和OrderTip组件 */
+.wrapper-box, .wrapper-head {
+  padding: 20px 40px;
+  width: 1200px;
+  margin: 20px auto;
+}
+
+.wrapper-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.75;
+  background-color:#ddd;
+}
+
+.head-left {
+  font-weight: 700;
+}
+
+.head-right, .price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.left-tips {
+  font-size: 21px;
+}
+
+.left-tips-time {
+  font-size: 16px;
+}
+
+.left-tips-count-down {
+  font-size: 10px;
+  color: red;
+}
+
+.price {
+  color: #e4393c;
+}
+
+.wrapper-box {
+  background-color: #fff;
+  transition: .35s;
+  height: auto;
+}
+
+.-box-item {
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  align-items: center;
+  margin: 20px 20px;
+  cursor: pointer;
+  color: #495060;
+}
+
+.-box-item img {
+  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+img {
+  border-style: none;
+}
+
+.-box-item span {
+  margin-left: 15px;
+}
+
+
+/* PlusMinusPage组件 */
+.minus,.plus {
+  border-width: 1px !important;
+  /* background: #f1f1f1 !important; */
+  width: 25px !important;
+  height: 20px !important;
+  line-height: 16px !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.countinput {
+  border-width: 1px 0;
+  width: 46px;
+  outline: 0;
+  text-align: center;
+  box-sizing: border-box;
+  height: 20px;
+  color: #232326;
+  border: 1px solid #cbcbcb;
+  background: #fff;
+  line-height: 18px;
+  vertical-align: middle;
+  padding: 0;
+}
+
+
+/* PayResult组件 */
+.pay-result-infor-box {
+  /* width: 370px; */
+  height: 530px;
+  background-color: #fff;
+  /* float: left; */
+  /* -webkit-box-shadow: 0 20px 40px rgb(0 36 84 / 15%); */
+  /* box-shadow: 0 20px 40px rgb(0 36 84 / 15%); */
+}
+
+
+.result-infor-con {
+  padding-left: 54px;
+  padding-right: 40px;
+  padding-top: 35px;
+}
+
+.pay-result-infor-box .result-infor-con .success-text {
+  font-size: 22px;
+  color: #3fd09e;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.pay-result-infor-box .result-infor-con .infor-kv-box {
+  padding-top: 13px;
+}
+
+.pay-result-infor-box .result-infor-con .other-operation a {
+  color: #59aaf9;
+  /* -webkit-transition: all .1s ease; */
+  transition: all .1s ease;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.pay-result-infor-box .result-infor-con .other-operation .line {
+  width: 1px;
+  height: 10px;
+  background-color: #ededed;
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.pay-result-infor-box .result-infor-con .main-tips-text {
+  color: #999;
+  line-height: 22px;
+  padding-top: 12px;
+  margin-bottom: 3px;
+}
+
+.pay-result-infor-box {
+  text-align: center;
+}
+
+li {
+  list-style-type:none;
+}

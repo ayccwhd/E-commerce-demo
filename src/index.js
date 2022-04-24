@@ -1,18 +1,17 @@
-/*
- * @Author: aycc
- * @Date: 2022-03-13 11:58:33
- * @LastEditors: aycc
- * @LastEditTime: 2022-03-13 20:18:21
- * @Description: file content
- * @FilePath: \my-app\src\index.js
- */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/base.less';
-import Router from './router/index';
-
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Router />,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

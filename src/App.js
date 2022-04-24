@@ -1,33 +1,42 @@
-import React,{Component} from 'react'  
-import {Routes, Route,Navigate} from 'react-router-dom'
+
+import logo from './logo.svg';
+import Shop from './Components/Shop/Shop'
+import SearchResult from './Components/SearchResult/SearchResult'
+import Home from './Components/Home/Home'
 import Cart from './views/Cart/Cart'
-import Home from './views/Home/Home'
 import Me from './views/Me/Me'
 import Product from './views/Product/Product.jsx'
 import Shop from './views/Shop/Shop'
 import Pay from './views/Pay/Pay'
-import './App.less'
-// import Layout from './components/Layout/Layout'
+import SearchField from './Components/SearchField/SearchField'
+import React, { Component } from 'react';
+import './App.css';
+import { Link, Route, BrowserRouter, Routes, Navigate } from 'react-router-dom'
+import { HashRouter, Switch } from 'react-router-dom'
+import TabDivide from 'zent/es/tabs/components/TabDivide';
 
-// 创建并暴露组件
-export default class App extends Component{
-
-    render(){
-        return (
-            <div>
-                <Routes>
-                    <Route path="/home" element={<Home/>}/>
-                    <Route path="/cart" element={<Cart/>}/>
-                    <Route path="/me" element={<Me/>}/>
-                    <Route path="/productinfo/:id" element={<Product/>}/>
-                    <Route path="/shopinfo/:shopname" element={<Shop/>}/>
-                    <Route path="/pay" element={<Pay/>}/>
-                    <Route path="*" element={<Navigate to="/cart" />} />
-                </Routes>
-                {/* 底部导航 */}
-                {/* <Layout /> */}
-            </div>
-         
-        )
-    }
+function App() {
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/searchfield" element={<SearchField />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/me" element={<Me/>}/>
+        <Route path="/productinfo/:id" element={<Product/>}/>
+        <Route path="/shopinfo/:shopname" element={<Shop/>}/>
+        <Route path="/pay" element={<Pay/>}/>
+        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/searchresult" element={<SearchResult />} />
+        {/* <Route path="/test" element={<Test />} /> */}
+      </Routes>
+    </HashRouter>
+    // <div>
+    //   <SearchResult />
+    // </div>
+  );
 }
+
+export default App;
+

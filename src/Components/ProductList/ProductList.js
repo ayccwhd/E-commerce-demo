@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, PureComponent, Fragment } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios';
 //UI组件
-class ProductList extends Component {
+class ProductList extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {

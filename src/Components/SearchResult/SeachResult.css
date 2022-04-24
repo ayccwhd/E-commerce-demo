@@ -1,9 +1,9 @@
-/* .titlebox{
+.searchtitle{
+    width: 100%;
     position:sticky;
     top:0px;
     z-index: 10;
-} */
-
+}
 .search-area {
     position: fixed;
     top: 0;
@@ -80,6 +80,8 @@
     width: 47%;
     border-radius: .533333rem;
     padding: .266667rem;
+    margin-right: .08em;
+    margin-left: .08em;
     margin-top: .16rem;
     background-color: #fff;
   }

@@ -1,0 +1,15 @@
+.setprice{
+    color: red;
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-end;;
+}
+.icon{
+    font-size: 12px;
+}
+.left{
+    font-size: 16px;
+}
+.right{
+    font-size: 12px;
+}

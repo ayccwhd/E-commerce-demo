@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SearchBar } from 'antd-mobile';
+import { SearchBar } from 'antd-mobile-v2';
 import axios from 'axios'
 
 export default class SearchField extends Component {

@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-//import { Button } from 'antd-mobile';
-//import 'antd-mobile/dist/antd-mobile.css';  // or 'antd-mobile/dist/antd-mobile.less'
+//import { Button } from 'antd-mobile-v2';
+//import 'antd-mobile-v2/dist/antd-mobile-v2.css';  // or 'antd-mobile-v2/dist/antd-mobile-v2.less'
 
 //ReactDOM.render(<Button>Start</Button>, document.getElementById('root'));
 ReactDOM.render(

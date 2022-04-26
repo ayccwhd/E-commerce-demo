@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavBar, TabBar } from 'antd-mobile'
+import { NavBar, TabBar } from 'antd-mobile-v2'
 import {
     AppOutline,
     MessageOutline,

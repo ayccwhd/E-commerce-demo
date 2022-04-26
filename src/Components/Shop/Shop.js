@@ -4,7 +4,6 @@ import { NavBar, Icon } from 'antd-mobile-v2';
 import Layout from '../Layout/Layout'
 import ProductList from '../ProductList/ProductList'
 import axios from 'axios'
-//import 'antd-mobile-v2/dist/antd-mobile-v2.css';  // or 'antd-mobile-v2/dist/antd-mobile-v2.less'
 import 'antd-mobile-v2/dist/antd-mobile.css';  // or 'antd-mobile-v2/dist/antd-mobile.css'
 import './Shop.css'
 import '../../mock/user.js'

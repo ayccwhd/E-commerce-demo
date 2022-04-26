@@ -4,7 +4,6 @@ import { Link, Route, BrowserRouter, Routes, Navigate } from 'react-router-dom'
 import { NavBar, Icon } from 'antd-mobile-v2';
 import Layout from '../Layout/Layout'
 import ProductList from '../ProductList/ProductList'
-//import 'antd-mobile-v2/dist/antd-mobile-v2.css';  // or 'antd-mobile-v2/dist/antd-mobile-v2.less'
 import 'antd-mobile-v2/dist/antd-mobile.css';  // or 'antd-mobile-v2/dist/antd-mobile.css'
 import './Home.css'
 import '../../mock/user.js'

@@ -28,6 +28,7 @@ export default class Home extends Component {
     };
     constructor(props) {
         super(props);
+        console.log("constructor");
         this.searchtext = React.createRef();
     }
     UNSAFE_componentWillMount() {
@@ -47,6 +48,7 @@ export default class Home extends Component {
     loadProductdata() {
         axios.get('/').then(res => {
             //输出商品信息
+            console.log("loadProductdata");
             console.log(res.data);
             console.log(res.data.data.goodsList);
             this.setState({ goodsList: res.data.data.goodsList });

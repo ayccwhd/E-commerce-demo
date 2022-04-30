@@ -3,12 +3,71 @@ import { SearchBar } from 'antd-mobile-v2';
 import axios from 'axios'
 
 export default class SearchField extends Component {
+    //受控组件方式获取ref
+    state = {
+        value: '',
+    };
+    componentDidMount() {
+        this.autoFocusInst.focus();
+    }
+    onFocus = () => {
+        console.log('onFocus');
+    }
+    onChange = (value) => {
+        this.setState({ value });
+        //console.log(value);
+    };
+    onBlur = () => {
+        console.log("onBlur");
+    }
+    onClear = (value) => {
+        console.log(value, 'onClear')
+    }
+    onSubmit = (value) => {
+        //获取到用户要搜索的关键词
+        console.log(value, 'onSubmit');
+        //提交查找请求
+        axios.post('/searchfield', {
+            data: {
+                keyword: value
+            }
+        }).then(res => {
+            console.log(res.data.data.goodsList);
+        })
+    }
+    onCancel = () => {
+        console.log('onCancel');
+    }
+    searchBarhandle() {
+        const inpVal = this.input.value;
+        console.log(inpVal);
+    }
+    clear = () => {
+        this.setState({ value: '' });
+    };
+    handleClick = () => {
+        this.manualFocusInst.focus();
+    }
+
     render() {
         return (
             <div>
-                <SearchBar placeholder="请输入您想要查找的商品"
-                    onFocus={this.searchBarhandle}
+                <SearchBar
+                    //ref={input => this.input = input}
+                    placeholder="请输入您想要查找的商品"
+                    //onFocus={() => { this.searchBarhandle() }}
+                    //onFocus={this.search.bind(this)}
+                    ref={ref => this.autoFocusInst = ref}
                     className="searchbar"
+                    value={this.state.value}
+                    //placeholder="Search"
+                    onSubmit={this.onSubmit}
+                    onClear={value => console.log(value, 'onClear')}
+                    onFocus={this.onFocus}
+                    onBlur={this.onBlur}
+                    onCancel={this.onCancel}
+                    showCancelButton
+                    onChange={this.onChange}
                 />
             </div>
         )

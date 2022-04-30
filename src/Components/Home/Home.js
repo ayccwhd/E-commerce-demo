@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SearchBar, Button, WhiteSpace, WingBlank, Carousel, Flex } from 'antd-mobile-v2';
-import { Link, Route, BrowserRouter, Routes, Navigate } from 'react-router-dom'
+import { Link, Route, BrowserRouter, Routes, Navigate, useNavigate } from 'react-router-dom'
 import { NavBar, Icon } from 'antd-mobile-v2';
 import Layout from '../Layout/Layout'
 import ProductList from '../ProductList/ProductList'
@@ -18,11 +18,20 @@ import category4 from '../../assets/category4.png'
 
 const pages = [1, 2, 3, 4, 5];
 
-export default class Home extends Component {
+//类组件中使用useNavigate需要封装
+// function WithRouter(Home) {
+//     return function () {
+//         const navigate = useNavigate()
+//         return <Home navigate={navigate} />
+//     }
+
+// }
+
+class Home extends Component {
     state = {
         data: [banner1, banner2, banner3],
-        imgHeight: 176,
-        goodsList: []
+        imgHeight: 176,//轮播图的高度
+        goodsList: []//商品列表数据
 
     };
     constructor(props) {
@@ -60,20 +69,32 @@ export default class Home extends Component {
             this.handleBtnClick()
         }
     }
+    //搜索框事件处理
     searchBarhandle = () => {
         this.props.history.push('/searchfield');
     }
-    beforeChange = (from, to) => {
+    beforechange(from, to) {
         console.log(`slide from ${from} to ${to}`)
     }
-    afterChange = (index) => {
+    afterchange(index) {
         console.log('slide to', index)
+    }
+    //轮播图片加载事件
+    imgonload() {
+        window.dispatchEvent(new Event('resize'));
+        this.setState({ imgHeight: 'auto' });
+    }
+    //商品点击事件
+    handleBtnClick(goods_id) {
+        console.log(goods_id);
+        //this.props.navigate('/goodsdetail/${v.goods_id}');
+        //navigate('/goodsdetail/${v.goods_id}');
     }
     render() {
         return (
             <div>
                 <SearchBar placeholder="请输入您想要查找的商品"
-                    onFocus={this.searchBarhandle}
+                    onFocus={() => { this.searchBarhandle() }}
                     className="searchbar"
                 />
 
@@ -84,7 +105,9 @@ export default class Home extends Component {
                         autoplay={false}
                         infinite
                         beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                        //beforeChange={(from, to) => { this.beforechange(from, to) }}
                         afterChange={index => console.log('slide to', index)}
+                    //afterChange={(index) => { this.afterchange(index) }}
                     >
                         {this.state.data.map(val => (
                             <a
@@ -97,11 +120,12 @@ export default class Home extends Component {
                                     src={val}
                                     alt=""
                                     style={{ width: '100%', verticalAlign: 'top' }}
-                                    onLoad={() => {
-                                        // fire window resize event to change height
-                                        window.dispatchEvent(new Event('resize'));
-                                        this.setState({ imgHeight: 'auto' });
-                                    }}
+                                    // onLoad={() => {
+                                    //     // fire window resize event to change height
+                                    //     window.dispatchEvent(new Event('resize'));
+                                    //     this.setState({ imgHeight: 'auto' });
+                                    // }}
+                                    onLoad={() => { this.imgonload() }}
                                 />
                             </a>
                         ))}
@@ -144,7 +168,9 @@ export default class Home extends Component {
                                     {item.goods.map(v => (
                                         <div key={v.goods_id} className="good">
                                             <div className="good_content"
-                                                onClick={() => this.props.history.push(`/goodsdetail/${v.goods_id}`)}
+                                                //onClick={() => this.props.history.push(`/goodsdetail/${v.goods_id}`)}
+                                                //箭头函数绑定方式进行传参
+                                                onClick={() => this.handleBtnClick(v.goods_id)}
                                             >
                                                 <img src={v.goods_img_replace} alt="" />
                                                 <div className="describe ellipsis-1">{v.goods_name}</div>
@@ -176,3 +202,4 @@ export default class Home extends Component {
         )
     }
 }
+export default Home;

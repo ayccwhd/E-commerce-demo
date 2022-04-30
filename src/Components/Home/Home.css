@@ -24,6 +24,7 @@
     position:sticky;
     top:44px;
     z-index: 10;
+    touch-action: none;
   }
   .goods-list-bottom {
     height: 1.066667rem;
@@ -95,6 +96,7 @@
     padding: .266667rem .133333rem;
   }
   .goodsList .goods .good .good_content .price {
+    margin-top:10px ;
     font-size: .346667rem;
     color: red;
   }

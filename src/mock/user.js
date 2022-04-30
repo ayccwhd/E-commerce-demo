@@ -217,6 +217,79 @@ module.exports = Mock.mock('/searchresult', 'get', (options) => {
         data: ret
     }
 })
+//商品搜索
+module.exports = Mock.mock('/searchfield', 'post', (options) => {
+    const ret = Mock.mock({
+        'user': { username: 'Tom' },
+        'goodsList': [
+            {
+                "group_img": "http://image4.suning.cn/uimg/cms/img/149559219946350066.png",
+                "goods": [
+                    {
+                        "goods_id": 27520,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    },
+                    {
+                        "goods_id": 27521,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    },
+                    {
+                        "goods_id": 27522,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    },
+                    {
+                        "goods_id": 27523,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    },
+                    {
+                        "goods_id": 27524,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    },
+                    {
+                        "goods_id": 27525,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    },
+                    {
+                        "goods_id": 27535,
+                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+                        "goods_price": 7999,
+                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+                        "cat_id": 20
+                    }
+                ]
+            }
+        ]
+    })
+    return {
+        status: 200,
+        data: ret
+    }
+})
 //get请求：模拟分页数据
 module.exports = Mock.mock('/list', 'get', (options) => {
     //接受参数：是JSON格式，需要转换成对象
@@ -236,6 +309,7 @@ module.exports = Mock.mock('/list', 'get', (options) => {
         data: ret
     }
 })
+
 
 //post请求，模拟注册
 module.exports = Mock.mock('/add', 'post', (options) => {

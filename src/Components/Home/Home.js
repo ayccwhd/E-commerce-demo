@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { SearchBar, Button, WhiteSpace, WingBlank, Carousel, Flex } from 'antd-mobile-v2';
-import { Link, Route, BrowserRouter, Routes, Navigate, useNavigate } from 'react-router-dom'
+import { Link, Route, BrowserRouter, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import { NavBar, Icon } from 'antd-mobile-v2';
 import Layout from '../Layout/Layout'
 import ProductList from '../ProductList/ProductList'
@@ -18,14 +18,15 @@ import category4 from '../../assets/category4.png'
 
 const pages = [1, 2, 3, 4, 5];
 
-//类组件中使用useNavigate需要封装
-// function WithRouter(Home) {
-//     return function () {
-//         const navigate = useNavigate()
-//         return <Home navigate={navigate} />
-//     }
+//高阶组件封装类组件使用router v6
+export function withRouter(Child) {
+    return (props) => {
+        const location = useLocation();
+        const navigate = useNavigate();
+        return <Child {...props} navigate={navigate} location={location} />;
+    }
+}
 
-// }
 
 class Home extends Component {
     state = {
@@ -71,7 +72,8 @@ class Home extends Component {
     }
     //搜索框事件处理
     searchBarhandle = () => {
-        this.props.history.push('/searchfield');
+        //跳转至搜索页面
+        this.props.navigate('/searchfield');
     }
     beforechange(from, to) {
         console.log(`slide from ${from} to ${to}`)
@@ -202,4 +204,4 @@ class Home extends Component {
         )
     }
 }
-export default Home;
+export default withRouter(Home);

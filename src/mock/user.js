@@ -145,80 +145,80 @@ module.exports = Mock.mock('/shop', 'get', (options) => {
         data: ret
     }
 })
-module.exports = Mock.mock('/searchresult', 'get', (options) => {
-    const ret = Mock.mock({
-        'user': { username: 'Tom' },
-        'goodsList': [
-            {
-                "group_img": "http://image4.suning.cn/uimg/cms/img/149559219946350066.png",
-                "goods": [
-                    {
-                        "goods_id": 27520,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    },
-                    {
-                        "goods_id": 27521,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    },
-                    {
-                        "goods_id": 27522,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    },
-                    {
-                        "goods_id": 27523,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    },
-                    {
-                        "goods_id": 27524,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    },
-                    {
-                        "goods_id": 27525,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    },
-                    {
-                        "goods_id": 27535,
-                        "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
-                        "goods_price": 7999,
-                        "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
-                        "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
-                        "cat_id": 20
-                    }
-                ]
-            }
-        ]
-    })
-    return {
-        status: 200,
-        data: ret
-    }
-})
+// module.exports = Mock.mock('/searchresult', 'get', (options) => {
+//     const ret = Mock.mock({
+//         'user': { username: 'Tom' },
+//         'goodsList': [
+//             {
+//                 "group_img": "http://image4.suning.cn/uimg/cms/img/149559219946350066.png",
+//                 "goods": [
+//                     {
+//                         "goods_id": 27520,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     },
+//                     {
+//                         "goods_id": 27521,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     },
+//                     {
+//                         "goods_id": 27522,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     },
+//                     {
+//                         "goods_id": 27523,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     },
+//                     {
+//                         "goods_id": 27524,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     },
+//                     {
+//                         "goods_id": 27525,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     },
+//                     {
+//                         "goods_id": 27535,
+//                         "goods_name": "哈曼卡顿（Harman/Kardon） SABRE35CN 条形回音壁套装 黑色",
+//                         "goods_price": 7999,
+//                         "goods_img": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_800x800.jpg",
+//                         "goods_img_replace": "http://image5.suning.cn/uimg/b2c/newcatentries/0070072458-000000000134974159_1_400x400.jpg",
+//                         "cat_id": 20
+//                     }
+//                 ]
+//             }
+//         ]
+//     })
+//     return {
+//         status: 200,
+//         data: ret
+//     }
+// })
 //商品搜索
-module.exports = Mock.mock('/searchfield', 'post', (options) => {
+module.exports = Mock.mock('/searchresult', 'post', (options) => {
     const ret = Mock.mock({
         'user': { username: 'Tom' },
         'goodsList': [

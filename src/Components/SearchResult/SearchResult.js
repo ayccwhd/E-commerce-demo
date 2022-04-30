@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { SearchBar, Button, WhiteSpace, WingBlank, Carousel, Flex } from 'antd-mobile-v2';
+import { Link, Route, BrowserRouter, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import { NavBar, Icon } from 'antd-mobile-v2';
 import Layout from '../Layout/Layout'
 import ProductList from '../ProductList/ProductList'
@@ -16,29 +17,37 @@ import category4 from '../../assets/category4.png'
 
 const pages = [1, 2, 3, 4, 5];
 
-export default class Home extends Component {
+//高阶组件封装类组件使用router v6
+export function withRouter(Child) {
+    return (props) => {
+        const location = useLocation();
+        const navigate = useNavigate();
+        return <Child {...props} navigate={navigate} location={location} />;
+    }
+}
+
+class SearchResult extends Component {
     // constructor(props) { }
     state = {
-        data: [banner1, banner2, banner3],
-        imgHeight: 176,
+        //搜索结果数组
         goodsList: []
     };
     UNSAFE_componentWillMount() {
-        //render前获取商品数据
+        //render前获取搜索结果数据
         this.loadProductdata();
     }
     UNSAFE_componentDidMount() {
         this.autoFocusInst.focus();
-        setTimeout(() => {
-            this.setState({
-                data: [banner1, banner2, banner3],
-            });
-        }, 100);
     }
     loadProductdata() {
-        axios.get('/searchresult').then(res => {
-            //输出商品信息
-            console.log(res.data);
+        //获取到searchfield页面传递来的参数
+        console.log("获取到的关键词" + this.props.location.state);
+        //提交查找请求
+        axios.post('/searchresult', {
+            data: {
+                keyword: this.props.location.state
+            }
+        }).then(res => {
             console.log(res.data.data.goodsList);
             this.setState({ goodsList: res.data.data.goodsList });
         })
@@ -46,7 +55,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                {/* 店铺名 */}
+                {/* 标题 */}
                 <NavBar
                     className="searchtitle"
                     mode="light"
@@ -54,7 +63,7 @@ export default class Home extends Component {
                     onLeftClick={() => console.log('onLeftClick')}
                 >搜索结果</NavBar>
                 <WhiteSpace />
-                {/* 商品列表 */}
+                {/* 搜索结果列表 */}
                 <div className="goodsList">
                     {this.state.goodsList.map(item => (
                         <div key={item.group_img} className="goods">
@@ -98,3 +107,5 @@ export default class Home extends Component {
         )
     }
 }
+
+export default withRouter(SearchResult);

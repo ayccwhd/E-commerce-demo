@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 import { SearchBar } from 'antd-mobile-v2';
+import { Link, Route, BrowserRouter, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
-export default class SearchField extends Component {
+//高阶组件封装类组件使用router v6
+export function withRouter(Child) {
+    return (props) => {
+        const location = useLocation();
+        const navigate = useNavigate();
+        return <Child {...props} navigate={navigate} location={location} />;
+    }
+}
+
+class SearchField extends Component {
     //受控组件方式获取ref
     state = {
         value: '',
@@ -26,14 +36,16 @@ export default class SearchField extends Component {
     onSubmit = (value) => {
         //获取到用户要搜索的关键词
         console.log(value, 'onSubmit');
+        //页面跳转
+        this.props.navigate("/searchresult", { state: value });
         //提交查找请求
-        axios.post('/searchfield', {
-            data: {
-                keyword: value
-            }
-        }).then(res => {
-            console.log(res.data.data.goodsList);
-        })
+        // axios.post('/searchfield', {
+        //     data: {
+        //         keyword: value
+        //     }
+        // }).then(res => {
+        //     console.log(res.data.data.goodsList);
+        // })
     }
     onCancel = () => {
         console.log('onCancel');
@@ -73,6 +85,8 @@ export default class SearchField extends Component {
         )
     }
 }
+
+export default withRouter(SearchField);
 
 
 

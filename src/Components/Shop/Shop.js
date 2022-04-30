@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { SearchBar, Button, WhiteSpace, WingBlank, Carousel, Flex } from 'antd-mobile-v2';
+import { Link, Route, BrowserRouter, Routes, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import { NavBar, Icon } from 'antd-mobile-v2';
 import Layout from '../Layout/Layout'
 import ProductList from '../ProductList/ProductList'
@@ -17,7 +18,16 @@ import category4 from '../../assets/category4.png'
 
 const pages = [1, 2, 3, 4, 5];
 
-export default class Home extends Component {
+//高阶组件封装类组件使用router v6
+export function withRouter(Child) {
+    return (props) => {
+        const location = useLocation();
+        const navigate = useNavigate();
+        return <Child {...props} navigate={navigate} location={location} />;
+    }
+}
+
+class Shop extends Component {
     // constructor(props) { }
     state = {
         data: [banner1, banner2, banner3],
@@ -44,6 +54,23 @@ export default class Home extends Component {
             this.setState({ goodsList: res.data.data.goodsList });
         })
     }
+    //返回上一级
+    onLeftClick() {
+        console.log('onLeftClick');
+        this.props.navigate(-1);
+    }
+    //轮播图加载
+    imgonload() {
+        // fire window resize event to change height
+        window.dispatchEvent(new Event('resize'));
+        this.setState({ imgHeight: 'auto' });
+    }
+    //跳转至商品详情页面
+    handleBtnClick(goods_id) {
+        console.log(goods_id);
+        //跳转至商品详情页面
+        //this.props.navigate(`/goodsdetails${goods_id}`);
+    }
     render() {
         return (
             <div>
@@ -52,7 +79,7 @@ export default class Home extends Component {
                     className="shopname"
                     mode="light"
                     icon={<Icon type="left" />}
-                    onLeftClick={() => console.log('onLeftClick')}
+                    onLeftClick={() => this.onLeftClick()}
                     rightContent={[
                         <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
                         <Icon key="1" type="ellipsis" />,
@@ -78,11 +105,7 @@ export default class Home extends Component {
                                     src={val}
                                     alt=""
                                     style={{ width: '100%', verticalAlign: 'top' }}
-                                    onLoad={() => {
-                                        // fire window resize event to change height
-                                        window.dispatchEvent(new Event('resize'));
-                                        this.setState({ imgHeight: 'auto' });
-                                    }}
+                                    onLoad={() => { this.imgonload() }}
                                 />
                             </a>
                         ))}
@@ -105,7 +128,7 @@ export default class Home extends Component {
                                     {item.goods.map(v => (
                                         <div key={v.goods_id} className="good">
                                             <div className="good_content"
-                                                onClick={() => this.props.history.push(`/goodsdetail/${v.goods_id}`)}
+                                                onClick={() => this.handleBtnClick(v.goods_id)}
                                             >
                                                 <img src={v.goods_img_replace} alt="" />
                                                 <div className="describe ellipsis-1">{v.goods_name}</div>
@@ -130,3 +153,4 @@ export default class Home extends Component {
         )
     }
 }
+export default withRouter(Shop);

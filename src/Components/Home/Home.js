@@ -86,11 +86,11 @@ class Home extends Component {
         window.dispatchEvent(new Event('resize'));
         this.setState({ imgHeight: 'auto' });
     }
-    //商品点击事件
+    //商品卡片点击事件
     handleBtnClick(goods_id) {
         console.log(goods_id);
-        //this.props.navigate('/goodsdetail/${v.goods_id}');
-        //navigate('/goodsdetail/${v.goods_id}');
+        //跳转至商品详情页面
+        //this.props.navigate(`/goodsdetails${goods_id}`);
     }
     render() {
         return (
@@ -122,11 +122,6 @@ class Home extends Component {
                                     src={val}
                                     alt=""
                                     style={{ width: '100%', verticalAlign: 'top' }}
-                                    // onLoad={() => {
-                                    //     // fire window resize event to change height
-                                    //     window.dispatchEvent(new Event('resize'));
-                                    //     this.setState({ imgHeight: 'auto' });
-                                    // }}
                                     onLoad={() => { this.imgonload() }}
                                 />
                             </a>

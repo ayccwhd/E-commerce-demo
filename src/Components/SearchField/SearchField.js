@@ -38,14 +38,6 @@ class SearchField extends Component {
         console.log(value, 'onSubmit');
         //页面跳转
         this.props.navigate("/searchresult", { state: value });
-        //提交查找请求
-        // axios.post('/searchfield', {
-        //     data: {
-        //         keyword: value
-        //     }
-        // }).then(res => {
-        //     console.log(res.data.data.goodsList);
-        // })
     }
     onCancel = () => {
         console.log('onCancel');
